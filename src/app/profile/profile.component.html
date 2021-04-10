@@ -1,0 +1,179 @@
+<div class="container">
+  
+  <div class="alert alert-info alert-dismissible" *ngIf="submitted" role="alert">
+    {{user.fname}} {{user.lname}} rated {{user.rating}} star!
+    <button type="button" class="close" data-dismiss="alert" (click)="alertClose()" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+ 
+  <div class="first" style="display: inline-block;"><b>Student:</b>&nbsp;
+    <span>{{signupForm.value.userData.fname}}</span>&nbsp;
+    <span>{{signupForm.value.userData.lname}}</span>
+  </div>
+  <div class="first" style="float: right;"><b>Rating:</b>&nbsp;
+    <span><b>{{showRating}}</b></span><i class="fa fa-star" [ngStyle]="{color:colour}"></i>
+  </div>
+
+  <div class="second col-xs-10 col-md-12 col-xs-offset-1 col-md-offset-2">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div formGroupName="userData">
+        <div class="row col-md-12">
+          <div class="form-group col-md-12">
+            <label for="username">Username <span class="help-block">*</span></label>
+            <div class="col-xs-12 col-md-7 iblock">
+            <input
+              matInput
+              type="text"
+              id="fname"
+              placeholder="John"
+              formControlName="fname">
+            </div>
+            
+            <div class="col-xs-12 col-md-5 iblock">
+              <input
+                matInput
+                type="text"
+                id="lname"
+                placeholder="Wick"
+                formControlName="lname">
+            </div>
+              <span *ngIf="(signupForm.get('userData.fname').hasError('nameIsForbidden') && (signupForm.get('userData.fname').touched)) || 
+              (signupForm.get('userData.lname').hasError('nameIsForbidden') && signupForm.get('userData.lname').touched)" class="help-block">This name is invalid!</span>
+              <span *ngIf="(signupForm.get('userData.fname').hasError('required')||signupForm.get('userData.lname').hasError('required'))
+              && (signupForm.get('userData.fname').touched||signupForm.get('userData.lname').touched)" class="help-block">This field is required!</span>
+            </div>
+        </div>
+
+        <div class="row col-md-12">
+          <div class="form-group col-md-12">
+            <label for="email">Email  <span class="help-block">*</span></label>
+            <div class="col-xs-12 col-md-12">
+              <input
+              matInput
+              type="text"
+              id="email"
+              formControlName="email"
+              placeholder="someone@example.com">
+            </div>
+            <span
+              *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched"
+              class="help-block">Please enter a valid email!</span>
+          </div>
+        </div>
+
+        <div class="row col-md-12">
+          <div class="form-group col-md-12">
+            <label for="dob">Date of Birth  <span class="help-block">*</span></label>
+            <div class="col-xs-12 col-md-12">
+              <mat-form-field>
+                <input id="dob" formControlName="dob" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <span *ngIf="(signupForm.get('userData.dob').hasError('invalidDate'))" class="help-block">Please enter a valid date</span>
+            <span *ngIf="(signupForm.get('userData.dob').hasError('required') && signupForm.get('userData.dob').touched) " class="help-block">Please enter a Date of Birth</span>
+          </div>
+        </div>
+
+        <div class="row col-md-12">
+          <div class="form-group col-md-12">
+            <label for="gender">Gender</label>
+            <mat-radio-group formControlName="gender">
+              <div class="radio col-xs-12 col-md-2 setRadio" *ngFor="let gender of genders">
+                <mat-radio-button [value]="gender">{{ gender }}</mat-radio-button>
+              </div>
+            </mat-radio-group>
+          </div>
+        </div>
+
+        <div class="row col-md-12">
+          <div class="form-group col-md-12">
+            <label for="phone">Phone Number <span class="help-block">*</span></label>
+            <div class="col-xs-12 col-md-12">
+              <input
+              matInput
+              type="text"
+              id="phone"
+              formControlName="phone">
+            </div>
+            <div *ngIf="signupForm.get('userData.phone').hasError('required') && signupForm.get('userData.phone').touched" class="help-block">Please enter phone number!</div>
+            <div *ngIf="signupForm.get('userData.phone').hasError('invalidPhone') && signupForm.get('userData.phone').touched" class="help-block">Invalid phone number!</div>
+          </div>
+        </div>
+
+        <div class="row col-md-12">
+          <div class="form-group col-md-12">
+            <label for="phone2">Alternate Phone Number</label>
+            <div class="col-xs-12 col-md-12">
+              <input
+              matInput
+              type="text"
+              id="phone2"
+              formControlName="phone2">
+            </div>
+            <div *ngIf="signupForm.get('userData.phone2').hasError('invalidPhone') && signupForm.get('userData.phone2').touched" class="help-block">Invalid phone number!</div>
+          </div>
+        </div>
+
+        <div class="row col-md-12">
+          <div class="form-group col-md-12">
+            <label for="city">City</label>
+            <div class="col-xs-12 col-md-12">
+              <input
+              type="text"
+              matInput
+              id="city"
+              formControlName="city">
+            </div>
+          </div>
+        </div>
+
+        <div class="row col-md-12">
+          <div class="form-group col-md-12">
+            <label for="state">State <span class="help-block">*</span></label>
+            <div class="col-xs-12 col-md-12">
+            <mat-form-field>
+              <mat-select id="state" name="state" formControlName="state">
+                <mat-option value="">--Select one--</mat-option>
+                <mat-option *ngFor="let item of states" value={{item}}>
+                  {{item}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            </div>
+            <div *ngIf="signupForm.get('userData.state').hasError('required') && signupForm.get('userData.state').touched" class="help-block">Please select a state!</div>
+          </div>
+        </div>
+
+        <div class="row col-md-12">
+          <div class="form-group col-md-12">
+            <label for="country">Country <span class="help-block">*</span></label>
+            <div class="col-xs-12 col-md-12">
+            <mat-form-field>
+              <mat-select id="country" name="country" formControlName="country" (selectionChange)="openStates()">
+                <mat-option value="">--Select one--</mat-option><mat-option value="India">India</mat-option>
+                <mat-option value="USA">U.S.A</mat-option><mat-option value="UK">U.K</mat-option>
+                <mat-option value="Japan">Japan</mat-option><mat-option value="France">France</mat-option><mat-option value="Russia">Russia</mat-option>
+              </mat-select>
+            </mat-form-field>
+            </div>
+            <div *ngIf="signupForm.get('userData.country').hasError('required') && signupForm.get('userData.country').touched" class="help-block">Please select a country!</div>
+          </div>
+        </div>
+        
+        <div class="row col-xs-12 offset-md-0">
+          <app-rating (sentRating)="receivedRating($event)"></app-rating>
+        </div>
+      
+        <div id="clickable">
+          <button mat-raised-button color="warn" type="submit" >Submit</button>
+        </div>
+    </div>
+    </form>
+    <span
+          *ngIf="signupForm.invalid && signupForm.touched"
+          class="help-block">Please enter valid data!</span>
+  </div>
+</div>

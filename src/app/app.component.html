@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 bg-orange">
+      <app-profile></app-profile>
+    </div>   
+    <div class="col-md-6 bg-primary scrollit">
+      <u>
+        <div class="head text-center">
+          Employee Details
+        </div> 
+      </u>
+      <div class="errormsg" *ngIf="msg">
+        <table style="height: 120px;">
+          <tbody>
+            <tr>
+              <td class="align-middle" style="padding-left:150px ;">{{msg}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <app-display *ngFor="let user of newuser; let i = index" [user]="user"></app-display>
+    </div>
+  </div>
+</div>

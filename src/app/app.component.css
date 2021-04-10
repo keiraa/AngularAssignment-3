@@ -1,0 +1,38 @@
+:host 
+{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container 
+{
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.scrollit{
+  height: 1120px;
+  overflow-y: scroll; 
+} 
+
+.bg-orange{
+  background-color:goldenrod;
+}
+.row{
+  margin: auto;
+}
+
+.head{
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.errormsg{
+  background-color: thistle;
+  height: 120px;
+  font-size: 18px;
+}
+

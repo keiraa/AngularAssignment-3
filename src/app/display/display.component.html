@@ -1,0 +1,28 @@
+<div class="container" (click)="gimme(user)">
+    <div class="row">
+        <div class="col-xs-5 col-md-4">Name:</div>
+        <div class="col-xs-7 col-md-8">
+          {{user.fname+" "+user.lname}}
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-5 col-md-4">Email:</div>
+      <div class="col-xs-7 col-md-8">
+        {{user.email}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-5 col-md-4">Phone:</div>
+      <div class="col-xs-7 col-md-8">
+        {{user.phone}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-5 col-md-4">Rating:</div>
+      <div class="col-xs-7 col-md-8">
+        {{user.rating}} star
+      </div>
+    </div>
+</div>

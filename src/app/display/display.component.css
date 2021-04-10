@@ -1,0 +1,28 @@
+.container{
+    background-color: aliceblue;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 0px solid blue;
+    border-radius: 5px;
+    box-shadow: 4px 4px rgb(127, 211, 245);
+}
+
+.container:hover{
+    margin-top: -1px;
+    box-shadow: 2px 2px rgb(110, 223, 238);
+} 
+
+.head{
+    text-align: center;
+    margin: 40px;
+}
+.div1{
+    right:30px;
+    position: absolute;
+}
+.container:after{
+    content: "";
+    clear: both;
+    display: table;
+  }

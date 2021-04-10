@@ -1,0 +1,104 @@
+{
+  "newuser": [
+  ],
+  "samples_for_you": [
+    {
+      "fname": "Mario",
+      "lname": "Gamer",
+      "dob": "2021-03-01",
+      "email": "supermarino17@gmail.com",
+      "gender": "Male",
+      "phone": "+91 9398697169",
+      "phone2": null,
+      "city": "Kolkata",
+      "state": "Hokkaido",
+      "country": "Japan",
+      "rating": "3 ",
+      "id": 1
+    },
+    {
+      "fname": "Dwayne",
+      "lname": "Johnson",
+      "dob": "2021-04-05",
+      "email": "johnnyy@gmail.com",
+      "gender": "Male",
+      "phone": "+91 9398697169",
+      "phone2": "9398697169",
+      "city": "Sacramento",
+      "state": "California",
+      "country": "USA",
+      "rating": "3 ",
+      "id": 2
+    },
+    {
+      "fname": "Johnu",
+      "lname": "Wicku",
+      "dob": "2021-04-01",
+      "email": "johnnyy@gmail.com",
+      "gender": "Male",
+      "phone": "+91 9398697169",
+      "phone2": "9398697169",
+      "city": "Kolkata",
+      "state": "Hokkaido",
+      "country": "Japan",
+      "rating": "2 ",
+      "id": 3
+    },
+    {
+      "fname": "Superuser",
+      "lname": "234",
+      "dob": "2021-03-30",
+      "email": "superhero@gmail.com",
+      "gender": "Male",
+      "phone": "+91 9398697169",
+      "phone2": "9398697169",
+      "city": "Delhi",
+      "state": "Haryana",
+      "country": "India",
+      "rating": "4 ",
+      "id": 4
+    },
+    {
+      "fname": "Mario",
+      "lname": "Gamer",
+      "dob": "2021-03-31",
+      "email": "supermario@gmail.com",
+      "gender": "Male",
+      "phone": "+91 9398697169",
+      "phone2": null,
+      "city": "Kolkata",
+      "state": "Hokkaido",
+      "country": "Japan",
+      "rating": "3 ",
+      "id": 5
+    },
+    {
+      "fname": "Harsha",
+      "lname": "Venkat",
+      "dob": "2021-04-01",
+      "email": "harshavenkat17@gmail.com",
+      "gender": "Male",
+      "phone": "+91 9874775775",
+      "phone2": null,
+      "city": "Winsdale",
+      "state": "Wales",
+      "country": "UK",
+      "rating": "5 ",
+      "id": 6
+    },
+    {
+      "fname": "Mario",
+      "lname": "Gamer",
+      "dob": "2021-03-31",
+      "email": "supermarino17@gmail.com",
+      "gender": "Male",
+      "phone": "+91 9398697169",
+      "phone2": null,
+      "city": "Kolkata",
+      "state": "Hokkaido",
+      "country": "Japan",
+      "rating": "2 ",
+      "id": 7
+    }
+  ]
+}
